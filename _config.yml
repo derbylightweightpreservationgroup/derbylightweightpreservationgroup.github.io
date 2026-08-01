@@ -1,0 +1,25 @@
+title: "Derby Lightweight Preservation Group"
+description: "Official website coming soon"
+url: "https://derbylightweightpreservationgroup.github.io"
+baseurl: ""
+
+remote_theme: daviddarnes/alembic@main
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+lang: en-GB
+timezone: Europe/London
+
+navigation_header:
+  - title: Home
+    url: /
+
+navigation_footer:
+  - title: Contact
+    url: mailto:[CONTACT EMAIL]
+
+email: "[CONTACT EMAIL]"
