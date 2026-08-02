@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+{% include site-header.html %}
+
+<main class="main  container">
+
+  <article class="article  article--post  content  typeset">
+
+    <h1>{{ page.title }}</h1>
+    {% assign date_format = site.date_format | default: "%d %b %Y" %}
+    <small class="small  post-meta">
+      {% if page.category %}{{ page.category | replace: "-", " " | capitalize }}&nbsp;&middot;&nbsp;{% endif %}<time datetime="{{ page.date | date_to_xmlschema }}" class="time">{{ page.date | date: date_format }}</time>
+    </small>
+
+    {% if page.featured_image %}
+      <figure>
+        <img src="{{ page.featured_image | relative_url }}" alt="{{ page.image_alt | escape }}">
+      </figure>
+    {% endif %}
+
+    {% if page.vehicle or page.work_area %}
+      <p class="post-details">
+        {% if page.vehicle %}<strong>Related vehicle:</strong> {{ page.vehicle }}{% endif %}
+        {% if page.vehicle and page.work_area %}<br>{% endif %}
+        {% if page.work_area %}<strong>Work area:</strong> {{ page.work_area | replace: "-", " " | capitalize }}{% endif %}
+      </p>
+    {% endif %}
+
+    {{ content }}
+
+    {% include nav-share.html %}
+
+    {% include post-comments.html %}
+
+  </article>
+
+  {% if page.aside == true %}{% include site-aside.html %}{% endif %}
+
+</main>
+
+{% include site-footer.html %}

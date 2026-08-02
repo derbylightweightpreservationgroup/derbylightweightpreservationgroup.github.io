@@ -1,0 +1,267 @@
+settings:
+  hide: true
+  content:
+    merge: true
+
+media:
+  input: assets/uploads
+  output: /assets/uploads
+  extensions: [jpg, jpeg, png, webp]
+  rename: safe
+
+content:
+  - name: updates
+    label: Updates
+    type: collection
+    path: _posts
+    format: yaml-frontmatter
+    subfolders: false
+    filename:
+      template: "{date}-{title}.md"
+      field: false
+    operations:
+      create: true
+      rename: false
+      delete: true
+    view:
+      fields: [title, date, category, vehicle, work_area]
+      primary: title
+      sort: [date, title, category, vehicle, work_area]
+      search: [title, summary, body]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: layout
+        type: string
+        default: post
+        hidden: true
+      - name: title
+        label: Title
+        type: string
+        required: true
+        description: A clear, specific headline for the update.
+        options:
+          minlength: 5
+          maxlength: 120
+      - name: date
+        label: Publication date
+        type: date
+        required: true
+        description: The date the update should be shown as published.
+        options:
+          time: false
+          format: yyyy-MM-dd
+      - name: summary
+        label: Summary
+        type: text
+        required: true
+        description: A short standalone summary used on the Home and Updates pages.
+        options:
+          minlength: 20
+          maxlength: 280
+      - name: body
+        label: Body content
+        type: rich-text
+        required: true
+        description: The full update in Markdown. Use headings below the post title, starting with Heading 2.
+        options:
+          format: markdown
+          switcher: true
+          extensions: [jpg, jpeg, png, webp]
+          rename: safe
+      - name: featured_image
+        label: Featured image
+        type: image
+        description: Optional. Choose a publication-cleared web image; if selected, alternative text must also be supplied.
+        options:
+          extensions: [jpg, jpeg, png, webp]
+          rename: safe
+      - name: image_alt
+        label: Featured-image alternative text
+        type: text
+        description: Required whenever a featured image is selected. Describe the meaningful content of the image.
+        options:
+          maxlength: 300
+      - name: category
+        label: Category
+        type: select
+        required: true
+        description: Choose the main type of update.
+        options:
+          values:
+            - name: restoration
+              label: Restoration
+            - name: group-news
+              label: Group news
+            - name: events
+              label: Events
+            - name: fundraising
+              label: Fundraising
+            - name: research
+              label: Research
+      - name: vehicle
+        label: Related vehicle
+        type: select
+        description: Choose a vehicle when the update relates to one; use General for group-wide updates.
+        options:
+          placeholder: Select a vehicle if relevant
+          values:
+            - name: "79018"
+              label: "79018"
+            - name: "79612"
+              label: "79612"
+            - name: Both vehicles
+              label: Both vehicles
+            - name: General
+              label: General
+      - name: work_area
+        label: Work area
+        type: select
+        description: Choose the main restoration work area when relevant.
+        options:
+          placeholder: Select a work area if relevant
+          values:
+            - name: bodywork
+              label: Bodywork
+            - name: interior
+              label: Interior
+            - name: mechanical
+              label: Mechanical
+            - name: electrical
+              label: Electrical
+            - name: brakes
+              label: Brakes
+            - name: underframe
+              label: Underframe
+            - name: painting
+              label: Painting
+            - name: documentation
+              label: Documentation
+
+  - name: the_train
+    label: The Train
+    type: file
+    path: the-train.md
+    format: yaml-frontmatter
+    operations: &protected_page
+      create: false
+      rename: false
+      delete: false
+    fields: &page_fields
+      - name: title
+        label: Page title
+        type: string
+        readonly: true
+      - name: body
+        label: Page content
+        type: rich-text
+        required: true
+        description: Edit the page in Markdown. Keep the existing Heading 2 section structure.
+        options:
+          format: markdown
+          switcher: true
+          extensions: [jpg, jpeg, png, webp]
+          rename: safe
+
+  - name: restoration
+    label: Restoration
+    type: file
+    path: restoration.md
+    format: yaml-frontmatter
+    operations: *protected_page
+    fields:
+      - name: title
+        label: Page title
+        type: string
+        readonly: true
+      - name: body
+        label: Objective and completed work
+        type: rich-text
+        required: true
+        description: Edit the restoration objective and completed work here. Use Restoration Status for the current phase, tasks and support needs.
+        options:
+          format: markdown
+          switcher: true
+          extensions: [jpg, jpeg, png, webp]
+          rename: safe
+
+  - name: support_us
+    label: Support Us
+    type: file
+    path: support-us.md
+    format: yaml-frontmatter
+    operations: *protected_page
+    fields: *page_fields
+
+  - name: about
+    label: About
+    type: file
+    path: about.md
+    format: yaml-frontmatter
+    operations: *protected_page
+    fields: *page_fields
+
+  - name: contact
+    label: Contact
+    type: file
+    path: contact.md
+    format: yaml-frontmatter
+    operations: *protected_page
+    fields: *page_fields
+
+  - name: restoration_status
+    label: Restoration Status
+    type: file
+    path: _data/restoration.yml
+    format: yaml
+    operations: *protected_page
+    fields:
+      - name: status
+        label: Status
+        type: string
+        required: true
+        description: Short overall status, for example Under restoration.
+        options:
+          maxlength: 80
+      - name: current_phase
+        label: Current phase
+        type: string
+        required: true
+        description: A short name for the present restoration phase.
+        options:
+          maxlength: 120
+      - name: summary
+        label: Current summary
+        type: text
+        required: true
+        description: A brief public summary shown on the Home and Restoration pages.
+        options:
+          minlength: 20
+          maxlength: 400
+      - name: last_updated
+        label: Last updated
+        type: date
+        required: true
+        description: Update this date whenever the restoration status changes.
+        options:
+          time: false
+          format: yyyy-MM-dd
+      - name: current_tasks
+        label: Current tasks
+        type: string
+        required: true
+        list:
+          min: 1
+      - name: next_tasks
+        label: Next planned tasks
+        type: string
+        required: true
+        list:
+          min: 1
+      - name: support_needed
+        label: Materials, skills or funding needed
+        type: string
+        required: true
+        list:
+          min: 1

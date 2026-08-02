@@ -1,0 +1,18 @@
+<header class="header">
+  <div class="container">
+    {% if site.logo %}{% include site-logo.html %}{% endif %}
+
+    {% include nav-header.html %}
+  </div>
+
+  {% if site.preview_mode %}
+    <aside class="preview-banner" aria-label="Preview status">
+      <div class="container">
+        <p><strong>Website Under Construction.</strong> All content is for previewing the site structure and layout only.</p>
+      </div>
+    </aside>
+  {% endif %}
+
+  {% include site-feature.html %}
+
+</header>

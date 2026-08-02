@@ -1,0 +1,69 @@
+---
+layout: default
+---
+
+{% include site-header.html %}
+
+<main class="main  container">
+
+  <article class="article  article--page  content  typeset">
+
+    <h1>{{ page.title }}</h1>
+
+    {{ content }}
+
+    {% assign restoration = site.data.restoration %}
+
+    <section aria-labelledby="current-work">
+      <h2 id="current-work">Current work</h2>
+      <p><strong>{{ restoration.status }} — {{ restoration.current_phase }}</strong></p>
+      <p>{{ restoration.summary }}</p>
+      <p><em>Last updated: {{ restoration.last_updated | date: "%e %B %Y" | strip }}</em></p>
+
+      <ul>
+        {% for task in restoration.current_tasks %}
+          <li>{{ task }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <section aria-labelledby="next-tasks">
+      <h2 id="next-tasks">Next planned tasks</h2>
+      <ul>
+        {% for task in restoration.next_tasks %}
+          <li>{{ task }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <section aria-labelledby="support-needed">
+      <h2 id="support-needed">Current material, skill and funding requirements</h2>
+      <ul>
+        {% for need in restoration.support_needed %}
+          <li>{{ need }}</li>
+        {% endfor %}
+      </ul>
+      <p><a href="{{ '/support-us/' | relative_url }}">See how to support the restoration</a>.</p>
+    </section>
+
+    <section aria-labelledby="related-updates">
+      <h2 id="related-updates">Related updates</h2>
+      {% assign related_updates = site.posts | where: "category", "restoration" %}
+      {% if related_updates.size > 0 %}
+        <ul>
+          {% for post in related_updates %}
+            <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> — {{ post.date | date: "%e %B %Y" | strip }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>No restoration updates have been published yet. [TO BE CONFIRMED: add the first restoration update.]</p>
+      {% endif %}
+    </section>
+
+  </article>
+
+  {% if page.aside == true %}{% include site-aside.html %}{% endif %}
+
+</main>
+
+{% include site-footer.html %}

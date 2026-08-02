@@ -1,15 +1,32 @@
 title: "Derby Lightweight Preservation Group"
-description: "Official website coming soon"
+description: "Information about the Derby Lightweight Preservation Group and the preservation of Derby Lightweight vehicles 79018 and 79612. [TO BE CONFIRMED: add an approved public description.]"
 url: "https://derbylightweightpreservationgroup.github.io"
 baseurl: ""
+preview_mode: true
 
-remote_theme: daviddarnes/alembic@main
+remote_theme: daviddarnes/alembic@4.1.0
 
 plugins:
   - jekyll-remote-theme
   - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-feed
+  - jekyll-paginate
+
+permalink: pretty
+paginate: 10
+paginate_path: "/updates/page:num/"
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - CONTRIBUTING.md
+  - Gemfile
+  - Gemfile.lock
 
 lang: en-GB
 timezone: Europe/London
@@ -17,9 +34,33 @@ timezone: Europe/London
 navigation_header:
   - title: Home
     url: /
+  - title: The Train
+    url: /the-train/
+  - title: Restoration
+    url: /restoration/
+  - title: Updates
+    url: /updates/
+  - title: Support Us
+    url: /support-us/
+  - title: About
+    url: /about/
+  - title: Contact
+    url: /contact/
 
 navigation_footer:
+  - title: Home
+    url: /
+  - title: The Train
+    url: /the-train/
+  - title: Restoration
+    url: /restoration/
+  - title: Updates
+    url: /updates/
+  - title: Support Us
+    url: /support-us/
+  - title: About
+    url: /about/
   - title: Contact
-    url: mailto:[CONTACT EMAIL]
+    url: /contact/
 
 email: "[CONTACT EMAIL]"

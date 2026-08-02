@@ -1,0 +1,42 @@
+{% if site.preview_mode %}
+<meta name="robots" content="noindex">
+{% endif %}
+<style>
+  .feature .container > p {
+    margin-bottom: 0;
+    padding-top: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  /* Keep unordered-list markers within the main text column. */
+  .typeset ul li {
+    margin-left: 2rem;
+  }
+
+  @media screen and (max-width: 39.999em) {
+    .feature .container > p {
+      font-size: 1.5rem;
+    }
+  }
+
+{% if site.preview_mode %}
+  .preview-banner {
+    margin: 0;
+    padding: 0.75rem 0;
+    border-top: 1px solid #f2c29f;
+    border-bottom: 1px solid #f2c29f;
+    background: #5c2d0c;
+    color: #fff;
+  }
+
+  .preview-banner p {
+    margin: 0;
+  }
+
+  .preview-banner strong {
+    color: inherit;
+  }
+{% endif %}
+</style>
