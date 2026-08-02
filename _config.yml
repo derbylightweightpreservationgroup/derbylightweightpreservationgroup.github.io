@@ -47,20 +47,4 @@ navigation_header:
   - title: Contact
     url: /contact/
 
-navigation_footer:
-  - title: Home
-    url: /
-  - title: The Train
-    url: /the-train/
-  - title: Restoration
-    url: /restoration/
-  - title: Updates
-    url: /updates/
-  - title: Support Us
-    url: /support-us/
-  - title: About
-    url: /about/
-  - title: Contact
-    url: /contact/
-
 email: "[CONTACT EMAIL]"
