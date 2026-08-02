@@ -13,6 +13,14 @@
     </aside>
   {% endif %}
 
-  {% include site-feature.html %}
+  {% if page.url == '/' %}
+    <div class="feature feature--home">
+      <div class="container typeset">
+        {{ page.feature_text | markdownify }}
+      </div>
+    </div>
+  {% else %}
+    {% include site-feature.html %}
+  {% endif %}
 
 </header>

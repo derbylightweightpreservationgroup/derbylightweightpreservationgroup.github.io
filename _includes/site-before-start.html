@@ -14,6 +14,28 @@
     line-height: 1.25;
   }
 
+  .feature--home {
+    background-color: #eee9d8;
+    background-image:
+      linear-gradient(90deg, rgba(249, 248, 239, 0.88) 0%, rgba(249, 248, 239, 0.7) 48%, rgba(249, 248, 239, 0.38) 100%),
+      url("{{ '/assets/images/home-hero-desktop.png' | relative_url }}");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .feature--home .container {
+    min-height: 42vh;
+    max-width: 1200px;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .feature--home .container > p {
+    max-width: 13ch;
+    color: #263a2d;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+  }
+
   /* Keep unordered-list markers within the main text column. */
   .typeset ul li {
     margin-left: 2rem;
@@ -26,6 +48,19 @@
 
     .feature .container > p {
       font-size: 2.5rem;
+    }
+
+    .feature--home {
+      background-image:
+        linear-gradient(rgba(249, 248, 239, 0.72), rgba(249, 248, 239, 0.58)),
+        url("{{ '/assets/images/home-hero-mobile.png' | relative_url }}");
+      background-position: center 30%;
+    }
+
+    .feature--home .container {
+      min-height: 45vh;
+      align-items: center;
+      text-align: center;
     }
   }
 
