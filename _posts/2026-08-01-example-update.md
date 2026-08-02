@@ -1,16 +1,16 @@
 ---
 layout: post
-title: "Sample Update"
+title: Sample Update
 date: 2026-08-01
-summary: "Sample content showing volunteers how a restoration update will appear. Delete this post and its image before the website launches."
+summary: Sample content showing volunteers how a restoration update will appear.
+  Delete this post and its image before the website launches.
 category: restoration
 vehicle: General
 work_area: documentation
 featured_image: /assets/uploads/example-update.png
-image_alt: "Neutral placeholder graphic reading 'Sample Update'."
+image_alt: Neutral placeholder graphic reading 'Sample Update'.
 ---
-
-**This is sample content. Delete this post and its featured image before the website launches.**
+**This is sample content.**
 
 Use the opening paragraph to explain what happened and why it matters. Keep it concise enough for readers who may not know the project.
 
