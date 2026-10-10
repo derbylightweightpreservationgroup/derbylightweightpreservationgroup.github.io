@@ -172,14 +172,6 @@ content:
     operations: *protected_page
     fields: *page_fields
 
-  - name: detailed_history
-    label: Detailed History
-    type: file
-    path: train-history.md
-    format: yaml-frontmatter
-    operations: *protected_page
-    fields: *page_fields
-
   - name: restoration
     label: Restoration
     type: file

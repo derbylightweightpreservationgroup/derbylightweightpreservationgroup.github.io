@@ -14,7 +14,7 @@ The Derby Lightweight Preservation Group formed in **late 1990** to rescue and r
 
 Supporters built up the restoration fund over the following years, enabling acquisition of 79018 and 79612 in 1994. A committee was established in September 1997 to run the group.
 
-These milestones form part of the history recorded by the DLPG, with references to *Pioneers*, the group's magazine. [Read the rescue and acquisition chronology]({{ '/the-train/history/#rescue-and-acquisition' | relative_url }}).
+These milestones form part of the history recorded by the DLPG, with references to *Pioneers*, the group's magazine. [Read the rescue and acquisition chronology]({{ '/the-train/#rescue-and-acquisition' | relative_url }}).
 
 ## Legal or organisational status
 

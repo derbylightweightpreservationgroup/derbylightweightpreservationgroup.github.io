@@ -160,7 +160,7 @@ When upgrading Alembic, compare the upstream `post.html` and `page.html` structu
 
 ## Editing with Pages CMS
 
-The detailed vehicle and preservation chronology is maintained in `train-history.md` at `/the-train/history/`, linked from The Train and related page summaries. Pages CMS exposes it as **Detailed History** using the same protected editing controls as other fixed pages. `HISTORY-EDITORIAL.md` tracks source clarifications and pre-launch review; it is excluded from the generated website, but remains visible in the public repository.
+The service and restoration summaries, detailed vehicle and preservation chronology, and source notes are maintained together in `the-train.md` at `/the-train/`, accessible directly through The Train in the menu bar. Pages CMS exposes this content as **The Train** using the same protected editing controls as other fixed pages. `HISTORY-EDITORIAL.md` tracks source clarifications and pre-launch review; it is excluded from the generated website, but remains visible in the public repository.
 
 Pages CMS reads `.pages.yml` from the repository root. It exposes only Updates, The Train, Restoration, Support Us, About, Contact and Restoration Status. Uploaded images are stored in `assets/uploads/` with safe filenames.
 
