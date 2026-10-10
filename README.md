@@ -109,6 +109,39 @@ For the public launch:
 4. Rebuild and confirm that neither `noindex` nor the draft notice appears in generated HTML.
 5. Confirm that `_site/sitemap.xml` and `_site/feed.xml` are generated before deploying.
 
+## Cloudflare Web Analytics
+
+Cloudflare Web Analytics is supported through an optional site-wide JavaScript beacon. It is disabled by default and does not add any dependencies to the site.
+
+To enable analytics:
+
+1. In the Cloudflare dashboard, open **Web Analytics** and select **Add a site**.
+2. Register the hostname `derbylightweightpreservationgroup.github.io` as a site that is not proxied through Cloudflare.
+3. Copy the site token from the JavaScript snippet shown under **Manage site**.
+4. Set `cloudflare_web_analytics_token` in `_config.yml` to that token:
+
+   ```yaml
+   cloudflare_web_analytics_token: "YOUR_SITE_TOKEN"
+   ```
+
+5. Build and publish the site normally.
+
+The site token is public configuration because it is included in every generated HTML page; do not put a Cloudflare API token or account credential in this setting. When a site token is configured, analytics also runs while `preview_mode: true`, so committee preview visits will be counted. To disable analytics, set `cloudflare_web_analytics_token` back to an empty string.
+
+For local verification, build the site and confirm that each generated HTML page contains one beacon and the configured token:
+
+```powershell
+bundle exec jekyll build
+$htmlFiles = Get-ChildItem _site -Recurse -Filter *.html
+$beacons = $htmlFiles | Select-String 'https://static.cloudflareinsights.com/beacon.min.js'
+$tokens = $htmlFiles | Select-String 'data-cf-beacon=' -SimpleMatch
+$htmlFiles.Count
+$beacons.Count
+$tokens.Count
+```
+
+All three counts should match. With `cloudflare_web_analytics_token: ""`, both beacon counts should instead be zero. After deployment, use the browser's developer tools to confirm that `beacon.min.js` loads and sends a request to Cloudflare, then allow a few minutes for the visit to appear in the Cloudflare Web Analytics dashboard. See [Cloudflare's manual installation guidance](https://developers.cloudflare.com/web-analytics/get-started/) for the current dashboard workflow.
+
 ## Site structure
 
 The public navigation is deliberately small:

@@ -3,6 +3,7 @@ description: "Information about the Derby Lightweight Preservation Group and the
 url: "https://derbylightweightpreservationgroup.github.io"
 baseurl: ""
 preview_mode: true
+cloudflare_web_analytics_token: ""
 
 remote_theme: daviddarnes/alembic@4.1.0
 

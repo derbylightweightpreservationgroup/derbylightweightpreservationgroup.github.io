@@ -139,10 +139,10 @@ content:
             - name: documentation
               label: Documentation
 
-  - name: the_train
-    label: The Train
+  - name: home
+    label: Home
     type: file
-    path: the-train.md
+    path: index.md
     format: yaml-frontmatter
     operations: &protected_page
       create: false
@@ -163,6 +163,14 @@ content:
           switcher: true
           extensions: [jpg, jpeg, png, webp]
           rename: safe
+
+  - name: the_train
+    label: The Train
+    type: file
+    path: the-train.md
+    format: yaml-frontmatter
+    operations: *protected_page
+    fields: *page_fields
 
   - name: restoration
     label: Restoration
