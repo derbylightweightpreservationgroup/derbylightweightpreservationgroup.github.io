@@ -10,4 +10,10 @@ permalink: /restoration/
 
 ## Completed work
 
-[TO BE CONFIRMED: summarise verified work already completed. Link to supporting updates where useful.]
+Key restoration milestones:
+
+- **October 1995:** asbestos removal was completed and certificates were sent following work at Doncaster.
+- **4 September 2004:** the power car moved under its own power using one engine at the group's AGM, recorded as its first powered movement in 15 years.
+- **12 April 2025:** trailer car 79612 was launched into traffic.
+
+[Read the detailed restoration and preservation chronology]({{ '/the-train/history/#restoration-and-preservation' | relative_url }}). The current work and planned tasks below are maintained separately from this historical record.

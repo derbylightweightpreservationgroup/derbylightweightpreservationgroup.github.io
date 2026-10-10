@@ -24,6 +24,7 @@ defaults:
       layout: post
 
 exclude:
+  - HISTORY-EDITORIAL.md
   - README.md
   - CONTRIBUTING.md
   - Gemfile

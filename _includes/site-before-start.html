@@ -92,4 +92,46 @@
     color: inherit;
   }
 {% endif %}
+
+{% if page.history_chronology %}
+  /* Separate chronology columns clearly, including on narrow screens. */
+  .typeset table {
+    table-layout: fixed;
+    margin-bottom: 1.5rem;
+  }
+
+  .typeset table th,
+  .typeset table td {
+    padding: 0.5rem;
+    text-align: left;
+    vertical-align: top;
+    overflow-wrap: anywhere;
+    border-bottom: 1px solid #d9dedb;
+  }
+
+  .typeset table th {
+    font-weight: 600;
+  }
+
+  .typeset table th:first-child {
+    width: 27%;
+  }
+
+  .typeset table th:nth-child(3) {
+    width: 25%;
+  }
+
+  @media screen and (max-width: 39.999em) {
+    .typeset table,
+    .typeset table thead th {
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    .typeset table th,
+    .typeset table td {
+      padding: 0.5rem 0.35rem;
+    }
+  }
+{% endif %}
 </style>

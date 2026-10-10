@@ -10,7 +10,11 @@ permalink: /about/
 
 ## Group history
 
-[TO BE CONFIRMED: add a concise, verified account of when and why the group was formed.]
+The Derby Lightweight Preservation Group formed in **late 1990** to rescue and restore the last remaining Derby Lightweight twin. An appeal appeared in *Rail*, issue 125, and the original intention was to take the vehicles to County School.
+
+Supporters built up the restoration fund over the following years, enabling acquisition of 79018 and 79612 in 1994. A committee was established in September 1997 to run the group.
+
+These milestones form part of the history recorded by the DLPG, with references to *Pioneers*, the group's magazine. [Read the rescue and acquisition chronology]({{ '/the-train/history/#rescue-and-acquisition' | relative_url }}).
 
 ## Legal or organisational status
 
@@ -18,7 +22,7 @@ permalink: /about/
 
 ## Where the train is based
 
-[TO BE CONFIRMED: state the train's base and whether public access is available.]
+The train is based at the Ecclesbourne Valley Railway (EVR).
 
 ## Relationship with the host railway
 

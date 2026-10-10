@@ -9,7 +9,9 @@ feature_image:
 
 The Derby Lightweight Preservation Group is working to preserve the only surviving Derby Lightweight 2-car set, 79612 & 79018.
 
-This website will document the train, the restoration work and the people supporting it. 
+Both vehicles entered British Railways service in January 1955 with different partners. They later served as an ultrasonic test train, before the group's rescue campaign brought them into preservation in 1994. [Discover the train and its history]({{ '/the-train/' | relative_url }}).
+
+This website documents the train, the restoration work and the people supporting it.
 
 ## Current restoration status
 
